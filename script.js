@@ -57,4 +57,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Typing Animation
+    const multipleText = document.querySelector('.multiple-text');
+    const textArray = ['Software Engineer', 'MERN Stack Developer', 'Frontend Enthusiast'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
+    const typingSpeed = 150;
+    const erasingSpeed = 100;
+    const delayBetweenTexts = 2000; 
+    function type() {
+        if (textIndex >= textArray.length) {
+            textIndex = 0;
+        }
+        currentText = textArray[textIndex];
+        if (!isDeleting && charIndex <= currentText.length) {
+            multipleText.textContent = currentText.substring(0, charIndex);
+            charIndex++;
+            setTimeout(type, typingSpeed);
+        } else if (isDeleting && charIndex >= 0) {
+            multipleText.textContent = currentText.substring(0, charIndex);
+            charIndex--;
+            setTimeout(type, erasingSpeed);
+        } else {
+            isDeleting = !isDeleting;   
+            if (!isDeleting) {
+                textIndex++;
+            }
+            setTimeout(type, delayBetweenTexts);
+        }
+    }
+    type();
+
+
 });
