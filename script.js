@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typing Animation
     const multipleText = document.querySelector('.multiple-text');
-    const textArray = ['Software Engineer', 'MERN Stack Developer', 'Frontend Enthusiast'];
+    const textArray = ['Software Engineer', 'MERN Stack Developer', 'Frontend Developer'];
     let textIndex = 0;
     let charIndex = 0;
     let currentText = '';
