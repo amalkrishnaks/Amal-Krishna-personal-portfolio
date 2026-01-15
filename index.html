@@ -210,9 +210,12 @@
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-wrapper">
                     <p class="contact-text">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                    <!-- Hidden iframe to capture submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
                     <form class="contact-form"
                         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd26aI3enFztHz7K-ItOB4OcgydjZpbg-IyYmGiXGy1XDNJoA/formResponse"
-                        method="POST" target="_blank">
+                        method="POST" target="hidden_iframe" id="contactForm">
                         <div class="form-group">
                             <input type="text" name="entry.336501659" placeholder="Name" required>
                         </div>
@@ -227,6 +230,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Success Popup -->
+        <div id="successPopup" class="popup-overlay">
+            <div class="popup-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You!</h3>
+                <p>Your message has been sent successfully. I'll get back to you soon!</p>
+                <button class="btn btn-primary" id="closePopup">Close</button>
+            </div>
+        </div>
     </main>
 
     <footer>

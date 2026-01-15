@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Popup Logic
+    const contactForm = document.getElementById('contactForm');
+    const hiddenIframe = document.getElementById('hidden_iframe');
+    const successPopup = document.getElementById('successPopup');
+    const closePopupBtn = document.getElementById('closePopup');
+
+    let submitted = false;
+
+    contactForm.addEventListener('submit', () => {
+        submitted = true;
+    });
+
+    hiddenIframe.addEventListener('load', () => {
+        if (submitted) {
+            successPopup.classList.add('show');
+            contactForm.reset();
+            submitted = false;
+        }
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+        successPopup.classList.remove('show');
+    });
+
+    // Close popup if clicking outside content
+    successPopup.addEventListener('click', (e) => {
+        if (e.target === successPopup) {
+            successPopup.classList.remove('show');
+        }
+    });
+
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
