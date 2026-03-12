@@ -48,6 +48,7 @@ h3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    
 }
 
 .section {
@@ -89,6 +90,8 @@ h3 {
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
+    cursor: pointer;
+    margin-right: 5px;
 }
 
 .btn-primary {
@@ -104,7 +107,6 @@ h3 {
 
 .btn-secondary {
     border: 2px solid var(--text-color);
-    margin-left: 1rem;
 }
 
 .btn-secondary:hover {
@@ -341,6 +343,10 @@ h3 {
     align-items: center;
     justify-content: center;
     color: #444;
+}
+
+.project-image .portfolio{
+    width: 500px;
 }
 
 .project-image img {
