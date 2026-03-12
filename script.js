@@ -91,5 +91,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     type();
 
+    // Scroll Reveal Animation
+    const sections = document.querySelectorAll('.section, .hero-content');
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    sections.forEach(section => {
+        section.classList.add('reveal-hidden');
+        revealOnScroll.observe(section);
+    });
 });
